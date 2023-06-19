@@ -1,5 +1,7 @@
-const read = async () => {
-    // Write your code here 
-};
+import { readFile } from 'fs';
 
-await read();
+readFile('fileToRead.txt',
+    (err, data) => {
+        if (err) throw err;
+        console.log(data.toString('utf8'))
+});
